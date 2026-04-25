@@ -1,0 +1,26 @@
+drug_id,drug_name,drug_class,mechanism_of_action,primary_use,toxicity_level,species_suitability,repurposing_potential,evidence_level
+DR001,Favipiravir,Antiviral,Inhibits viral RNA-dependent RNA polymerase,Antiviral therapy,Medium,Multi-species,High,Medium
+DR002,Ribavirin,Antiviral,Inhibits viral RNA synthesis and replication,Broad-spectrum antiviral therapy,High,Multi-species,Medium,Medium
+DR003,Remdesivir,Antiviral,Inhibits viral RNA-dependent RNA polymerase,Antiviral therapy,Medium,Multi-species,High,High
+DR004,Oseltamivir,Antiviral,"Inhibits neuraminidase, blocking viral release",Influenza treatment,Low,Poultry / Multi-species,Medium,Medium
+DR005,Molnupiravir,Antiviral,Induces viral error catastrophe during RNA replication,Antiviral therapy,Medium,Multi-species,High,Medium
+DR006,Ivermectin,Repurposed / Experimental,Interferes with host importin-mediated viral protein transport,Antiparasitic use,Medium,Multi-species,Medium,Low
+DR007,Doxycycline,Antimicrobial / Supportive,Inhibits bacterial protein synthesis; supportive anti-inflammatory effects,Bacterial infections,Medium,Multi-species,Medium,Low
+DR008,Azithromycin,Antimicrobial / Supportive,Inhibits bacterial protein synthesis; immunomodulatory effects,Bacterial infections,Medium,Multi-species,Medium,Low
+DR009,Enrofloxacin,Antimicrobial / Supportive,Inhibits bacterial DNA gyrase and topoisomerase IV,Veterinary antibacterial therapy,Medium,Poultry / Cattle / Swine,Low,Low
+DR010,Meloxicam,Anti-inflammatory / Immunomodulatory,"COX-2 preferential inhibition, reducing inflammation and pain",Anti-inflammatory and analgesic use,Low,Multi-species,Medium,Medium
+DR011,Flunixin meglumine,Anti-inflammatory / Immunomodulatory,"Non-selective COX inhibition, reducing inflammation, pain, and fever",Anti-inflammatory and analgesic use in veterinary medicine,Medium,Cattle / Swine / Multi-species,Medium,Medium
+DR012,Dexamethasone,Anti-inflammatory / Immunomodulatory,"Glucocorticoid receptor agonist, suppressing inflammation and immune response",Anti-inflammatory and immunosuppressive therapy,Medium,Multi-species,Medium,High
+DR013,Prednisolone,Anti-inflammatory / Immunomodulatory,"Glucocorticoid receptor agonist, reducing inflammation and immune activity",Anti-inflammatory and immunosuppressive therapy,Medium,Multi-species,Medium,Medium
+DR014,Interferon-alpha,Antiviral / Immunomodulatory,Enhances antiviral immune signaling and inhibits viral replication,Antiviral immunotherapy,Medium,Multi-species,High,Medium
+DR015,Interferon-beta,Antiviral / Immunomodulatory,Modulates antiviral immune response and limits viral replication,Antiviral immunotherapy,Medium,Multi-species,High,Medium
+DR016,Canagliflozin,Repurposed / Experimental,SGLT2 inhibition; explored computationally for off-target antiviral or host-pathway effects,Antidiabetic therapy,Medium,Cattle / Multi-species,High,Low
+DR017,Tepotinib,Repurposed / Experimental,MET tyrosine kinase inhibition; explored for interference with viral or host signaling pathways,Targeted anticancer therapy,High,Cattle / Multi-species,High,Low
+DR018,Hydroxychloroquine,Repurposed / Experimental,Alters endosomal pH and modulates immune activity,Antimalarial / immunomodulatory therapy,Medium,Multi-species,Low,Low
+DR019,Chloroquine,Repurposed / Experimental,Alters endosomal acidification and may affect viral entry-related pathways,Antimalarial therapy,High,Multi-species,Low,Low
+DR020,Nitazoxanide,Antiviral / Repurposed,Interferes with host-regulated viral replication pathways,Antiparasitic / broad antimicrobial use,Low,Multi-species,High,Medium
+DR021,Nirmatrelvir,Antiviral,"Inhibits viral main protease, blocking viral replication",Antiviral therapy,Medium,Multi-species,High,High
+DR022,Lopinavir,Antiviral,Inhibits viral protease activity,Antiretroviral therapy,Medium,Multi-species,Medium,Medium
+DR023,Ritonavir,Antiviral / Booster,Protease inhibitor; used mainly to boost plasma levels of companion antivirals,Antiretroviral therapy / pharmacokinetic boosting,Medium,Multi-species,Medium,Medium
+DR024,Monensin,Repurposed / Experimental,Disrupts ion transport across membranes; explored for antiviral and cellular pathway effects,Anticoccidial use,High,Poultry / Ruminants,Medium,Low
+DR025,Curcumin,Anti-inflammatory / Immunomodulatory,Modulates inflammatory and oxidative stress pathways,Nutraceutical / anti-inflammatory support,Low,Multi-species,Medium,Low

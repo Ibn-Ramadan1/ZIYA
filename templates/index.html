@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <h2>{{ project_name }}</h2>
+                <p class="muted">AI-Based Veterinary Drug Repurposing Platform</p>
+                <p class="muted">Focused on zoonotic and emerging animal diseases.</p>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>Filters</h3>
+
+                <form method="POST" action="/">
+                    <label for="selected_disease">Select disease</label>
+                    <select name="selected_disease" id="selected_disease">
+                        {% for disease in diseases %}
+                            <option value="{{ disease }}" {% if disease == selected_disease %}selected{% endif %}>
+                                {{ disease }}
+                            </option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="top_n">Number of recommendations</label>
+                    <input type="number" id="top_n" name="top_n" min="3" max="10" value="{{ top_n }}">
+
+                    <label for="min_score">Minimum score</label>
+                    <input type="number" id="min_score" name="min_score" min="0" max="100" value="{{ min_score }}">
+
+                    <div class="filter-group">
+                        <p class="filter-title">Allowed toxicity levels</p>
+                        {% for option in toxicity_options %}
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="allowed_toxicities" value="{{ option }}"
+                                    {% if option in selected_toxicities %}checked{% endif %}>
+                                {{ option }}
+                            </label>
+                        {% endfor %}
+                    </div>
+
+                    <div class="filter-group">
+                        <p class="filter-title">Allowed confidence levels</p>
+                        {% for option in confidence_options %}
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="allowed_confidence_levels" value="{{ option }}"
+                                    {% if option in selected_confidence %}checked{% endif %}>
+                                {{ option }}
+                            </label>
+                        {% endfor %}
+                    </div>
+
+                    <div class="button-row">
+                        <button type="submit" class="btn primary">Analyze</button>
+                        <a href="/" class="btn secondary">Reset</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="sidebar-box">
+                <h3>Database Summary</h3>
+                <p>Diseases: <strong>{{ disease_count }}</strong></p>
+                <p>Drug Candidates: <strong>{{ drug_count }}</strong></p>
+                <p>Disease-Drug Links: <strong>{{ link_count }}</strong></p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="hero">
+                <h1>{{ project_name }}</h1>
+                <h2>{{ project_subtitle }}</h2>
+                <p>
+                    This platform ranks repurposed drug candidates based on efficacy,
+                    safety, evidence, and species suitability.
+                </p>
+            </section>
+
+            {% if data_error %}
+                <section class="card error-box">
+                    <h3>Data loading/validation error</h3>
+                    <pre>{{ data_error }}</pre>
+                </section>
+            {% else %}
+
+            <section class="metrics">
+                <div class="metric-card">
+                    <span class="metric-number">{{ disease_count }}</span>
+                    <span class="metric-label">Supported Diseases</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">{{ drug_count }}</span>
+                    <span class="metric-label">Drug Candidates</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">{{ link_count }}</span>
+                    <span class="metric-label">Knowledge Links</span>
+                </div>
+            </section>
+
+            {% if disease_info is not none %}
+            <section class="card">
+                <h3>Disease Profile</h3>
+                <div class="two-col">
+                    <div>
+                        <p><strong>Species:</strong> {{ disease_info['species'] }}</p>
+                        <p><strong>Pathogen Type:</strong> {{ disease_info['pathogen_type'] }}</p>
+                        <p><strong>Target System:</strong> {{ disease_info['target_system'] }}</p>
+                        <p><strong>Zoonotic Risk:</strong> {{ disease_info['zoonotic_risk'] }}</p>
+                    </div>
+                    <div>
+                        <p><strong>Key Symptoms:</strong> {{ disease_info['key_symptoms'] }}</p>
+                        <p><strong>Molecular Target:</strong> {{ disease_info['molecular_target'] }}</p>
+                    </div>
+                </div>
+            </section>
+            {% endif %}
+
+            {% if results %}
+            <section class="card">
+                <div class="results-header">
+                    <h3>Recommended Drug Candidates</h3>
+
+                    <form method="POST" action="/download">
+                        <input type="hidden" name="selected_disease" value="{{ selected_disease }}">
+                        <input type="hidden" name="top_n" value="{{ top_n }}">
+                        <input type="hidden" name="min_score" value="{{ min_score }}">
+
+                        {% for option in selected_toxicities %}
+                            <input type="hidden" name="allowed_toxicities" value="{{ option }}">
+                        {% endfor %}
+
+                        {% for option in selected_confidence %}
+                            <input type="hidden" name="allowed_confidence_levels" value="{{ option }}">
+                        {% endfor %}
+
+                        <button type="submit" class="btn primary">Download Results as CSV</button>
+                    </form>
+                </div>
+
+                <div class="drug-list">
+                    {% for row in results %}
+                    <details class="drug-box">
+                        <summary class="drug-summary">
+                            <div class="drug-summary-top">
+                                <span class="drug-name">🧪 {{ row['drug_name'] }}</span>
+                            </div>
+
+                            <div class="badge-row">
+                                <span class="badge badge-score">📊 Score: {{ row['final_score'] }}</span>
+
+                                {% if row['confidence_level'] == 'High Confidence' %}
+                                    <span class="badge badge-confidence-high">🟢 {{ row['confidence_level'] }}</span>
+                                {% elif row['confidence_level'] == 'Moderate Confidence' %}
+                                    <span class="badge badge-confidence-moderate">🟡 {{ row['confidence_level'] }}</span>
+                                {% else %}
+                                    <span class="badge badge-confidence-exploratory">🟠 {{ row['confidence_level'] }}</span>
+                                {% endif %}
+
+                                {% if row['toxicity_level'] == 'High' %}
+                                    <span class="badge badge-toxicity-high">🔴 Toxicity: {{ row['toxicity_level'] }}</span>
+                                {% elif row['toxicity_level'] == 'Medium' %}
+                                    <span class="badge badge-toxicity-medium">🟡 Toxicity: {{ row['toxicity_level'] }}</span>
+                                {% else %}
+                                    <span class="badge badge-toxicity-low">🟢 Toxicity: {{ row['toxicity_level'] }}</span>
+                                {% endif %}
+                            </div>
+                        </summary>
+
+                        <div class="drug-details">
+                            <p><strong>Drug Class:</strong> {{ row['drug_class'] }}</p>
+                            <p><strong>Mechanism of Action:</strong> {{ row['mechanism_of_action'] }}</p>
+                            <p><strong>Species Suitability:</strong> {{ row['species_suitability'] }}</p>
+                            <p><strong>Repurposing Potential:</strong> {{ row['repurposing_potential'] }}</p>
+                            <p><strong>Explanation:</strong> {{ row['explanation'] }}</p>
+                        </div>
+                    </details>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            <section class="card">
+                <h3>About ZIYA</h3>
+                <p>{{ about }}</p>
+            </section>
+
+            <section class="card">
+                <h3>Limitations</h3>
+                <ul>
+                    {% for item in limitations %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="card">
+                <h3>Future Work</h3>
+                <ul>
+                    {% for item in future_work %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>

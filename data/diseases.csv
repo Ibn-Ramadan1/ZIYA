@@ -1,0 +1,6 @@
+disease_id,disease_name,species,pathogen_type,target_system,zoonotic_risk,key_symptoms,molecular_target
+D001,Avian Influenza (H5N1),Poultry,Virus,Respiratory/Systemic,High,"respiratory distress, coughing, nasal discharge, sudden death",viral RNA polymerase / hemagglutinin
+D002,African Swine Fever (ASF),Swine,Virus,Hemorrhagic/Systemic,Low,"high fever, hemorrhage, cyanosis, sudden death",viral DNA polymerase / viral replication proteins
+D003,Lumpy Skin Disease (LSD),Cattle,Virus,Skin/Systemic,Low,"skin nodules, fever, lymphadenopathy, reduced milk production",viral DNA polymerase / envelope-associated proteins
+D004,Foot and Mouth Disease (FMD),Cattle,Virus,Oral/Dermal/Systemic,Medium,"fever, salivation, oral vesicles, lameness",viral protease / RNA-dependent RNA polymerase
+D005,SARS-CoV-2,Companion animals / multi-species,Virus,Respiratory/Systemic,High,"respiratory signs, fever, nasal discharge, lethargy",spike protein / main protease / RNA-dependent RNA polymerase

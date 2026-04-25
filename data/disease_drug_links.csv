@@ -1,0 +1,51 @@
+disease_name,drug_name,target_match,predicted_efficacy,predicted_safety,evidence_level,literature_support,final_score
+Avian Influenza (H5N1),Favipiravir,High,High,Medium,Medium,High,88
+Avian Influenza (H5N1),Ribavirin,Medium,Medium,Low,Medium,Medium,68
+Avian Influenza (H5N1),Remdesivir,High,High,Medium,High,High,90
+Avian Influenza (H5N1),Oseltamivir,High,High,High,Medium,High,92
+Avian Influenza (H5N1),Molnupiravir,High,High,Medium,Medium,Medium,85
+Avian Influenza (H5N1),Interferon-alpha,High,Medium,Medium,Medium,Medium,78
+Avian Influenza (H5N1),Interferon-beta,Medium,Medium,Medium,Medium,Medium,74
+Avian Influenza (H5N1),Nitazoxanide,Medium,Medium,High,Medium,Medium,76
+Avian Influenza (H5N1),Ivermectin,Low,Low,Medium,Low,Low,40
+Avian Influenza (H5N1),Dexamethasone,Low,Low,Medium,Medium,Low,35
+African Swine Fever (ASF),Favipiravir,Medium,Medium,Medium,Low,Low,58
+African Swine Fever (ASF),Ribavirin,Low,Low,Low,Low,Low,32
+African Swine Fever (ASF),Remdesivir,Low,Low,Medium,Low,Low,36
+African Swine Fever (ASF),Molnupiravir,Medium,Medium,Medium,Low,Low,55
+African Swine Fever (ASF),Interferon-alpha,Medium,Medium,Medium,Medium,Medium,70
+African Swine Fever (ASF),Interferon-beta,Medium,Medium,Medium,Medium,Medium,68
+African Swine Fever (ASF),Nitazoxanide,Medium,Medium,High,Low,Low,60
+African Swine Fever (ASF),Dexamethasone,Low,Low,Medium,Low,Low,30
+African Swine Fever (ASF),Curcumin,Low,Low,High,Low,Low,34
+African Swine Fever (ASF),Ivermectin,Low,Low,Medium,Low,Low,38
+Lumpy Skin Disease (LSD),Canagliflozin,High,Medium,Medium,Low,Medium,74
+Lumpy Skin Disease (LSD),Tepotinib,High,High,Low,Low,Medium,79
+Lumpy Skin Disease (LSD),Interferon-alpha,Medium,Medium,Medium,Medium,Medium,70
+Lumpy Skin Disease (LSD),Interferon-beta,Medium,Medium,Medium,Medium,Medium,68
+Lumpy Skin Disease (LSD),Nitazoxanide,Medium,Medium,High,Low,Low,61
+Lumpy Skin Disease (LSD),Meloxicam,Low,Low,High,Medium,Low,42
+Lumpy Skin Disease (LSD),Flunixin meglumine,Low,Low,Medium,Medium,Low,40
+Lumpy Skin Disease (LSD),Dexamethasone,Low,Low,Medium,Medium,Low,36
+Lumpy Skin Disease (LSD),Curcumin,Low,Low,High,Low,Low,33
+Lumpy Skin Disease (LSD),Ivermectin,Low,Low,Medium,Low,Low,37
+Foot and Mouth Disease (FMD),Favipiravir,High,Medium,Medium,Medium,Medium,76
+Foot and Mouth Disease (FMD),Ribavirin,Medium,Medium,Low,Medium,Medium,62
+Foot and Mouth Disease (FMD),Remdesivir,Medium,Medium,Medium,Medium,Medium,70
+Foot and Mouth Disease (FMD),Interferon-alpha,High,Medium,Medium,Medium,Medium,74
+Foot and Mouth Disease (FMD),Interferon-beta,Medium,Medium,Medium,Medium,Medium,68
+Foot and Mouth Disease (FMD),Nitazoxanide,Medium,Medium,High,Medium,Medium,72
+Foot and Mouth Disease (FMD),Meloxicam,Low,Low,High,High,Medium,46
+Foot and Mouth Disease (FMD),Flunixin meglumine,Low,Low,Medium,High,Medium,44
+Foot and Mouth Disease (FMD),Dexamethasone,Low,Low,Medium,Medium,Low,34
+Foot and Mouth Disease (FMD),Curcumin,Low,Low,High,Low,Low,32
+SARS-CoV-2,Remdesivir,High,High,Medium,High,High,91
+SARS-CoV-2,Molnupiravir,High,High,Medium,High,High,89
+SARS-CoV-2,Nirmatrelvir,High,High,Medium,High,High,93
+SARS-CoV-2,Favipiravir,Medium,Medium,Medium,Medium,Medium,72
+SARS-CoV-2,Ribavirin,Medium,Low,Low,Low,Low,44
+SARS-CoV-2,Interferon-beta,High,Medium,Medium,Medium,Medium,77
+SARS-CoV-2,Nitazoxanide,Medium,Medium,High,Medium,Medium,74
+SARS-CoV-2,Dexamethasone,Low,Medium,Medium,High,High,66
+SARS-CoV-2,Lopinavir,Medium,Low,Medium,Medium,Low,50
+SARS-CoV-2,Ritonavir,Low,Low,Medium,Medium,Low,41
