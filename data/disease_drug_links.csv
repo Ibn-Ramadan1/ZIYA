@@ -9,6 +9,91 @@ Avian Influenza (H5N1),Interferon-beta,Medium,Medium,Medium,Medium,Medium,74
 Avian Influenza (H5N1),Nitazoxanide,Medium,Medium,High,Medium,Medium,76
 Avian Influenza (H5N1),Ivermectin,Low,Low,Medium,Low,Low,40
 Avian Influenza (H5N1),Dexamethasone,Low,Low,Medium,Medium,Low,35
+SARS-CoV-2,Remdesivir,High,High,Medium,High,High,91
+SARS-CoV-2,Molnupiravir,High,High,Medium,High,High,89
+SARS-CoV-2,Nirmatrelvir,High,High,Medium,High,High,93
+SARS-CoV-2,Favipiravir,Medium,Medium,Medium,Medium,Medium,72
+SARS-CoV-2,Ribavirin,Medium,Low,Low,Low,Low,44
+SARS-CoV-2,Interferon-beta,High,Medium,Medium,Medium,Medium,77
+SARS-CoV-2,Nitazoxanide,Medium,Medium,High,Medium,Medium,74
+SARS-CoV-2,Dexamethasone,Low,Medium,Medium,High,High,66
+SARS-CoV-2,Lopinavir,Medium,Low,Medium,Medium,Low,50
+SARS-CoV-2,Ritonavir,Low,Low,Medium,Medium,Low,41
+Rift Valley Fever,Ribavirin,High,Medium,Medium,Medium,High,74
+Rift Valley Fever,Favipiravir,High,Medium,Medium,Medium,Medium,72
+Rift Valley Fever,Interferon-alpha,Medium,Medium,High,Medium,Medium,70
+Rift Valley Fever,Interferon-beta,Medium,Medium,High,Medium,Medium,68
+Rift Valley Fever,Galidesivir,High,Medium,Medium,Medium,Medium,71
+Rabies,Interferon-alpha,Medium,Low,Medium,Low,Low,48
+Rabies,Interferon-beta,Medium,Low,Medium,Low,Low,46
+Rabies,Ribavirin,Medium,Low,Medium,Low,Low,44
+Rabies,Favipiravir,Medium,Low,Medium,Low,Low,43
+Rabies,Interferon-gamma,Medium,Low,Medium,Low,Low,45
+Newcastle Disease,Favipiravir,High,Medium,Medium,Medium,Medium,69
+Newcastle Disease,Ribavirin,High,Medium,Medium,Medium,Medium,68
+Newcastle Disease,Umifenovir,Medium,Medium,High,Medium,Medium,67
+Newcastle Disease,Interferon-alpha,Medium,Medium,High,Medium,Medium,66
+Newcastle Disease,Interferon-beta,Medium,Medium,High,Medium,Medium,65
+West Nile Fever,Ribavirin,Medium,Medium,Medium,Medium,Medium,66
+West Nile Fever,Favipiravir,Medium,Medium,Medium,Medium,Medium,65
+West Nile Fever,Galidesivir,High,Medium,Medium,Medium,Medium,70
+West Nile Fever,BCX4430,High,Medium,Medium,Medium,Medium,71
+West Nile Fever,Interferon-alpha,Medium,Medium,High,Medium,Medium,67
+Brucellosis,Doxycycline,High,High,Medium,High,High,86
+Brucellosis,Streptomycin,High,High,Medium,High,High,84
+Brucellosis,Gentamicin,High,Medium,Medium,High,High,78
+Brucellosis,Azithromycin,Medium,Medium,High,Medium,Medium,68
+Brucellosis,Enrofloxacin,Medium,Medium,Medium,Medium,Medium,64
+Middle East Respiratory Syndrome (MERS-CoV),Remdesivir,High,Medium,Medium,Medium,Medium,72
+Middle East Respiratory Syndrome (MERS-CoV),Ribavirin,Medium,Medium,Medium,Medium,Medium,66
+Middle East Respiratory Syndrome (MERS-CoV),Interferon-beta,Medium,Medium,High,Medium,Medium,68
+Middle East Respiratory Syndrome (MERS-CoV),Camostat,Medium,Medium,Medium,Medium,Medium,65
+Middle East Respiratory Syndrome (MERS-CoV),Nafamostat,Medium,Medium,Medium,Medium,Medium,64
+Nipah Virus,Ribavirin,Medium,Medium,Medium,Medium,Medium,66
+Nipah Virus,Favipiravir,Medium,Medium,Medium,Medium,Medium,65
+Nipah Virus,Remdesivir,Medium,Medium,Medium,Medium,Medium,67
+Nipah Virus,Interferon-alpha,Medium,Medium,High,Medium,Medium,64
+Nipah Virus,Interferon-beta,Medium,Medium,High,Medium,Medium,64
+Bovine Tuberculosis,Rifampicin,High,High,Medium,High,High,84
+Bovine Tuberculosis,Isoniazid,High,High,Medium,High,High,82
+Bovine Tuberculosis,Ethambutol,Medium,Medium,Medium,Medium,Medium,70
+Bovine Tuberculosis,Doxycycline,Medium,Medium,Medium,Medium,Medium,62
+Bovine Tuberculosis,Enrofloxacin,Medium,Medium,Medium,Medium,Medium,60
+Anthrax,Ciprofloxacin,High,High,Medium,High,High,86
+Anthrax,Doxycycline,High,High,Medium,High,High,84
+Anthrax,Penicillin G,High,High,High,High,High,88
+Anthrax,Oxytetracycline,Medium,Medium,Medium,Medium,Medium,68
+Anthrax,Enrofloxacin,Medium,Medium,Medium,Medium,Medium,66
+Leptospirosis,Doxycycline,High,High,High,High,High,86
+Leptospirosis,Penicillin G,High,High,High,High,High,84
+Leptospirosis,Oxytetracycline,High,Medium,Medium,High,High,78
+Leptospirosis,Enrofloxacin,Medium,Medium,Medium,Medium,Medium,66
+Leptospirosis,Azithromycin,Medium,Medium,High,Medium,Medium,64
+Q Fever,Doxycycline,High,High,Medium,High,High,88
+Q Fever,Oxytetracycline,High,Medium,Medium,High,High,78
+Q Fever,Rifampicin,Medium,Medium,Medium,Medium,Medium,70
+Q Fever,Azithromycin,Medium,Medium,High,Medium,Medium,66
+Q Fever,Enrofloxacin,Medium,Medium,Medium,Medium,Medium,62
+Glanders,Ceftazidime,High,Medium,Medium,Medium,Medium,72
+Glanders,Ciprofloxacin,Medium,Medium,Medium,Medium,Medium,68
+Glanders,Doxycycline,Medium,Medium,Medium,Medium,Medium,66
+Glanders,Azithromycin,Medium,Medium,High,Medium,Medium,62
+Glanders,Gentamicin,Medium,Medium,Medium,Medium,Medium,64
+Psittacosis (Parrot Fever),Doxycycline,High,High,Medium,High,High,88
+Psittacosis (Parrot Fever),Azithromycin,Medium,Medium,High,Medium,Medium,70
+Psittacosis (Parrot Fever),Oxytetracycline,High,Medium,Medium,High,High,78
+Psittacosis (Parrot Fever),Enrofloxacin,Medium,Medium,Medium,Medium,Medium,62
+Psittacosis (Parrot Fever),Rifampicin,Low,Low,Medium,Low,Low,45
+Tularemia,Streptomycin,High,High,Medium,High,High,86
+Tularemia,Gentamicin,High,High,Medium,High,High,84
+Tularemia,Doxycycline,Medium,Medium,Medium,Medium,Medium,70
+Tularemia,Ciprofloxacin,High,Medium,Medium,High,High,78
+Tularemia,Azithromycin,Medium,Medium,High,Medium,Medium,62
+Plague,Streptomycin,High,High,Medium,High,High,88
+Plague,Gentamicin,High,High,Medium,High,High,86
+Plague,Doxycycline,High,Medium,Medium,High,High,78
+Plague,Ciprofloxacin,High,Medium,Medium,High,High,80
+Plague,Chloramphenicol,Medium,Medium,High,Medium,Medium,70
 African Swine Fever (ASF),Favipiravir,Medium,Medium,Medium,Low,Low,58
 African Swine Fever (ASF),Ribavirin,Low,Low,Low,Low,Low,32
 African Swine Fever (ASF),Remdesivir,Low,Low,Medium,Low,Low,36
@@ -39,13 +124,64 @@ Foot and Mouth Disease (FMD),Meloxicam,Low,Low,High,High,Medium,46
 Foot and Mouth Disease (FMD),Flunixin meglumine,Low,Low,Medium,High,Medium,44
 Foot and Mouth Disease (FMD),Dexamethasone,Low,Low,Medium,Medium,Low,34
 Foot and Mouth Disease (FMD),Curcumin,Low,Low,High,Low,Low,32
-SARS-CoV-2,Remdesivir,High,High,Medium,High,High,91
-SARS-CoV-2,Molnupiravir,High,High,Medium,High,High,89
-SARS-CoV-2,Nirmatrelvir,High,High,Medium,High,High,93
-SARS-CoV-2,Favipiravir,Medium,Medium,Medium,Medium,Medium,72
-SARS-CoV-2,Ribavirin,Medium,Low,Low,Low,Low,44
-SARS-CoV-2,Interferon-beta,High,Medium,Medium,Medium,Medium,77
-SARS-CoV-2,Nitazoxanide,Medium,Medium,High,Medium,Medium,74
-SARS-CoV-2,Dexamethasone,Low,Medium,Medium,High,High,66
-SARS-CoV-2,Lopinavir,Medium,Low,Medium,Medium,Low,50
-SARS-CoV-2,Ritonavir,Low,Low,Medium,Medium,Low,41
+Cysticercosis and Taeniasis,Albendazole,High,High,Medium,High,High,86
+Cysticercosis and Taeniasis,Praziquantel,High,High,Medium,High,High,84
+Cysticercosis and Taeniasis,Niclosamide,Medium,Medium,High,High,High,76
+Cysticercosis and Taeniasis,Ivermectin,Low,Low,Medium,Low,Low,42
+Cysticercosis and Taeniasis,Nitazoxanide,Medium,Medium,Medium,Medium,Medium,62
+Diphyllobothriasis,Praziquantel,High,High,High,High,High,88
+Diphyllobothriasis,Niclosamide,High,Medium,High,High,High,80
+Diphyllobothriasis,Albendazole,Medium,Medium,Medium,Medium,Medium,66
+Diphyllobothriasis,Nitazoxanide,Low,Low,Medium,Low,Low,44
+Fascioliasis,Triclabendazole,High,High,Medium,High,High,90
+Fascioliasis,Albendazole,Medium,Medium,Medium,Medium,Medium,68
+Fascioliasis,Praziquantel,Low,Low,High,Low,Low,40
+Fascioliasis,Nitazoxanide,Medium,Medium,Medium,Medium,Medium,62
+Cercarial Dermatitis,Ivermectin,Low,Low,Medium,Low,Low,38
+Cercarial Dermatitis,Albendazole,Low,Low,Medium,Low,Low,36
+Cercarial Dermatitis,Praziquantel,Medium,Low,High,Medium,Medium,55
+Cercarial Dermatitis,Meloxicam,Low,Low,Medium,Low,Low,35
+Clonorchiasis,Praziquantel,High,High,High,High,High,88
+Clonorchiasis,Albendazole,Medium,Medium,Medium,Medium,Medium,68
+Clonorchiasis,Triclabendazole,Medium,Medium,Medium,Medium,Medium,64
+Clonorchiasis,Nitazoxanide,Low,Low,Medium,Low,Low,42
+Trichinellosis,Albendazole,High,High,Medium,High,High,84
+Trichinellosis,Ivermectin,Medium,Medium,Medium,Medium,Medium,65
+Trichinellosis,Prednisolone,Low,Medium,Medium,Medium,Medium,58
+Trichinellosis,Dexamethasone,Low,Medium,Medium,Medium,Medium,56
+Visceral Larva Migrans,Albendazole,High,High,Medium,High,High,86
+Visceral Larva Migrans,Ivermectin,Medium,Medium,Medium,Medium,Medium,68
+Visceral Larva Migrans,Prednisolone,Low,Medium,Medium,Medium,Medium,58
+Visceral Larva Migrans,Dexamethasone,Low,Medium,Medium,Medium,Medium,56
+Cutaneous Larva Migrans,Ivermectin,High,High,Medium,High,High,84
+Cutaneous Larva Migrans,Albendazole,High,High,Medium,High,High,82
+Cutaneous Larva Migrans,Nitazoxanide,Low,Low,Medium,Low,Low,40
+Cutaneous Larva Migrans,Doxycycline,Low,Low,Medium,Low,Low,34
+Anisakiasis,Albendazole,Medium,Medium,Medium,Medium,Medium,62
+Anisakiasis,Ivermectin,Low,Low,Medium,Low,Low,40
+Anisakiasis,Nitazoxanide,Low,Low,Medium,Low,Low,38
+Anisakiasis,Meloxicam,Low,Low,Medium,Low,Low,35
+Cryptosporidiosis,Nitazoxanide,High,High,High,High,High,86
+Cryptosporidiosis,Azithromycin,Medium,Medium,High,Medium,Medium,68
+Cryptosporidiosis,Paromomycin,Medium,Medium,Medium,Medium,Medium,64
+Cryptosporidiosis,Curcumin,Low,Low,High,Low,Low,42
+Leishmaniasis,Miltefosine,High,High,Medium,High,High,86
+Leishmaniasis,Amphotericin B,High,High,Low,High,High,82
+Leishmaniasis,Interferon-gamma,Medium,Medium,Medium,Medium,Medium,66
+Leishmaniasis,Azithromycin,Low,Low,High,Low,Low,42
+Giardiasis,Metronidazole,High,High,Medium,High,High,88
+Giardiasis,Tinidazole,High,High,Medium,High,High,86
+Giardiasis,Nitazoxanide,High,Medium,High,High,High,80
+Giardiasis,Albendazole,Medium,Medium,Medium,Medium,Medium,68
+Balantidiasis,Metronidazole,High,High,Medium,High,High,84
+Balantidiasis,Tinidazole,Medium,Medium,Medium,Medium,Medium,70
+Balantidiasis,Nitazoxanide,Medium,Medium,Medium,Medium,Medium,66
+Balantidiasis,Doxycycline,Low,Low,Medium,Low,Low,38
+Chagas Disease,Benznidazole,High,High,Medium,High,High,88
+Chagas Disease,Nifurtimox,High,High,Medium,High,High,86
+Chagas Disease,Interferon-gamma,Medium,Low,Medium,Low,Low,48
+Chagas Disease,Curcumin,Low,Low,High,Low,Low,38
+Toxoplasmosis,Spiramycin,High,Medium,High,High,High,78
+Toxoplasmosis,Clindamycin,Medium,Medium,Medium,Medium,Medium,68
+Toxoplasmosis,Azithromycin,Medium,Medium,High,Medium,Medium,66
+Toxoplasmosis,Doxycycline,Low,Low,Medium,Low,Low,42

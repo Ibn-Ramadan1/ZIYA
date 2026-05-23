@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ project_name }}</title>
+    <title>{{ project_name }} | Veterinary AI Drug Repurposing Platform</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <div class="floating-controls">
+        <button type="button" class="control-btn" onclick="toggleSidebar()">☰ Sidebar</button>
+    </div>
+
+    <div class="topbar-hover-zone" id="topbarHoverZone"></div>
+
+    <nav class="topbar" id="topbar">
+        <div class="topbar-left">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="ZIYA Logo" class="topbar-logo">
+            <div>
+                <div class="brand-name">{{ project_name }}</div>
+                <div class="brand-sub">Veterinary AI Drug Repurposing Platform</div>
+            </div>
+        </div>
+        <div class="topbar-right">
+            <a href="#results">Results</a>
+            <a href="#about">About</a>
+            <a href="#future">Future Work</a>
+        </div>
+    </nav>
+
     <div class="page">
-        <aside class="sidebar">
-            <div class="sidebar-box">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-box sidebar-brand-box">
+                <div class="sidebar-logo-wrap">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="ZIYA Logo" class="sidebar-logo">
+                </div>
                 <h2>{{ project_name }}</h2>
                 <p class="muted">AI-Based Veterinary Drug Repurposing Platform</p>
                 <p class="muted">Focused on zoonotic and emerging animal diseases.</p>
@@ -18,16 +43,7 @@
             <div class="sidebar-box">
                 <h3>Filters</h3>
 
-                <form method="POST" action="/">
-                    <label for="selected_disease">Select disease</label>
-                    <select name="selected_disease" id="selected_disease">
-                        {% for disease in diseases %}
-                            <option value="{{ disease }}" {% if disease == selected_disease %}selected{% endif %}>
-                                {{ disease }}
-                            </option>
-                        {% endfor %}
-                    </select>
-
+                <form id="filterForm" method="POST" action="/">
                     <label for="top_n">Number of recommendations</label>
                     <input type="number" id="top_n" name="top_n" min="3" max="10" value="{{ top_n }}">
 
@@ -65,20 +81,47 @@
 
             <div class="sidebar-box">
                 <h3>Database Summary</h3>
-                <p>Diseases: <strong>{{ disease_count }}</strong></p>
-                <p>Drug Candidates: <strong>{{ drug_count }}</strong></p>
-                <p>Disease-Drug Links: <strong>{{ link_count }}</strong></p>
+                <div class="mini-stat-list">
+                    <div class="mini-stat">
+                        <span>Diseases</span>
+                        <strong>{{ disease_count }}</strong>
+                    </div>
+                    <div class="mini-stat">
+                        <span>Drug Candidates</span>
+                        <strong>{{ drug_count }}</strong>
+                    </div>
+                    <div class="mini-stat">
+                        <span>Knowledge Links</span>
+                        <strong>{{ link_count }}</strong>
+                    </div>
+                </div>
             </div>
         </aside>
 
         <main class="content">
-            <section class="hero">
-                <h1>{{ project_name }}</h1>
-                <h2>{{ project_subtitle }}</h2>
-                <p>
-                    This platform ranks repurposed drug candidates based on efficacy,
-                    safety, evidence, and species suitability.
-                </p>
+            <section class="hero {% if analyzed %}hero-compact{% endif %}">
+                <div class="hero-text">
+                    <span class="hero-chip">One Health • AI • Veterinary Pharmacology</span>
+                    <h1>{{ project_name }}</h1>
+                    <h2>{{ project_subtitle }}</h2>
+                    <p>
+                        This platform prioritizes repurposed drug candidates using efficacy,
+                        safety, evidence, and species suitability to support smarter veterinary
+                        decision support for zoonotic and emerging diseases.
+                    </p>
+                </div>
+
+                <div class="hero-side">
+                    <div class="hero-panel">
+                        <div class="hero-panel-title">Platform Focus</div>
+                        <ul>
+                            <li>Drug repurposing prioritization</li>
+                            <li>Zoonotic & emerging animal diseases</li>
+                            <li>Evidence-aware recommendation logic</li>
+                            <li>Species-sensitive filtering</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
             {% if data_error %}
@@ -90,30 +133,76 @@
 
             <section class="metrics">
                 <div class="metric-card">
+                    <span class="metric-icon">🦠</span>
                     <span class="metric-number">{{ disease_count }}</span>
                     <span class="metric-label">Supported Diseases</span>
                 </div>
                 <div class="metric-card">
+                    <span class="metric-icon">💊</span>
                     <span class="metric-number">{{ drug_count }}</span>
                     <span class="metric-label">Drug Candidates</span>
                 </div>
                 <div class="metric-card">
+                    <span class="metric-icon">🧠</span>
                     <span class="metric-number">{{ link_count }}</span>
                     <span class="metric-label">Knowledge Links</span>
                 </div>
             </section>
 
-            {% if disease_info is not none %}
-            <section class="card">
-                <h3>Disease Profile</h3>
+            <section class="card disease-selector-card">
+                <div class="section-title-row">
+                    <h3>Select Disease</h3>
+                    <span class="section-chip">Primary Input</span>
+                </div>
+
+                <div class="disease-selector-row">
+                    <div class="disease-selector-field">
+                        <label for="selected_disease_main"><strong>Disease</strong></label>
+                        <select name="selected_disease" id="selected_disease_main" form="filterForm">
+                            {% for disease in diseases %}
+                                <option value="{{ disease }}" {% if disease == selected_disease %}selected{% endif %}>
+                                    {{ disease }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="disease-selector-actions">
+                        <button type="submit" class="btn primary" form="filterForm">Update Analysis</button>
+                    </div>
+                </div>
+            </section>
+
+            {% if not analyzed %}
+            <section class="card start-card">
+                <div class="section-title-row">
+                    <h3>Ready for Analysis</h3>
+                    <span class="section-chip">Waiting for Input</span>
+                </div>
+                <p>
+                    Select a disease and adjust the filters, then press
+                    <strong>Update Analysis</strong> or <strong>Analyze</strong> to display the disease profile,
+                    ranked drug candidates, and comparison results.
+                </p>
+            </section>
+            {% endif %}
+
+            {% if analyzed and disease_info is not none %}
+            <section class="card disease-card">
+                <div class="section-title-row">
+                    <h3>Disease Profile</h3>
+                    <span class="section-chip">{{ selected_disease }}</span>
+                </div>
+
                 <div class="two-col">
-                    <div>
+                    <div class="info-group">
                         <p><strong>Species:</strong> {{ disease_info['species'] }}</p>
                         <p><strong>Pathogen Type:</strong> {{ disease_info['pathogen_type'] }}</p>
                         <p><strong>Target System:</strong> {{ disease_info['target_system'] }}</p>
                         <p><strong>Zoonotic Risk:</strong> {{ disease_info['zoonotic_risk'] }}</p>
                     </div>
-                    <div>
+
+                    <div class="info-group">
                         <p><strong>Key Symptoms:</strong> {{ disease_info['key_symptoms'] }}</p>
                         <p><strong>Molecular Target:</strong> {{ disease_info['molecular_target'] }}</p>
                     </div>
@@ -121,10 +210,99 @@
             </section>
             {% endif %}
 
-            {% if results %}
+            {% if analyzed and not results %}
+            <section class="card no-results-card">
+                <div class="section-title-row">
+                    <h3>No Recommendations Found</h3>
+                    <span class="section-chip">No Match</span>
+                </div>
+                <p>
+                    No drug candidates matched the selected filters. Try lowering the minimum score
+                    or allowing more toxicity/confidence levels.
+                </p>
+            </section>
+            {% endif %}
+
+            {% if analyzed and results %}
+            <section class="card results-overview-card" id="results">
+                <div class="section-title-row">
+                    <h3>Recommendation Overview</h3>
+                    <span class="section-chip">Analysis Summary</span>
+                </div>
+
+                <div class="results-overview-grid">
+                    <div class="overview-box top-highlight">
+                        <div class="overview-label">Top Candidate</div>
+                        <div class="overview-value">{{ results[0]['drug_name'] }}</div>
+                        <div class="overview-sub">
+                            Highest-ranked candidate for {{ selected_disease }} based on the selected filters.
+                        </div>
+                    </div>
+
+                    <div class="overview-box">
+                        <div class="overview-label">Top Score</div>
+                        <div class="overview-value">{{ results[0]['final_score'] }}</div>
+                        <div class="overview-sub">Best score among returned candidates</div>
+                    </div>
+
+                    <div class="overview-box">
+                        <div class="overview-label">Returned Results</div>
+                        <div class="overview-value">{{ results|length }}</div>
+                        <div class="overview-sub">Candidates that matched current filters</div>
+                    </div>
+                </div>
+
+                <div class="recommendation-summary-box">
+                    <div class="recommendation-summary-title">Recommendation Summary</div>
+                    <p>
+                        ZIYA ranked <strong>{{ results|length }}</strong> candidate(s) for
+                        <strong>{{ selected_disease }}</strong> using current score, toxicity,
+                        and confidence filters. The leading candidate is
+                        <strong>{{ results[0]['drug_name'] }}</strong> with a score of
+                        <strong>{{ results[0]['final_score'] }}</strong>.
+                    </p>
+                </div>
+            </section>
+
+<section class="card comparison-card">
+    <div class="section-title-row">
+        <h3>Drug Comparison</h3>
+        <span class="section-chip">Custom Comparison</span>
+    </div>
+
+    <p class="muted under-title">
+        Select any drug candidates below to compare their score, confidence, toxicity, class, and species suitability.
+    </p>
+
+    <div class="comparison-selector">
+        {% for row in results %}
+        <label class="comparison-check">
+            <input 
+                type="checkbox"
+                class="compare-drug-checkbox"
+                {% if loop.index <= 3 %}checked{% endif %}
+                data-rank="{{ loop.index }}"
+                data-drug="{{ row['drug_name'] }}"
+                data-score="{{ row['final_score'] }}"
+                data-confidence="{{ row['confidence_level'] }}"
+                data-toxicity="{{ row['toxicity_level'] }}"
+                data-class="{{ row['drug_class'] }}"
+                data-species="{{ row['species_suitability'] }}"
+            >
+            <span>#{{ loop.index }} {{ row['drug_name'] }}</span>
+        </label>
+        {% endfor %}
+    </div>
+
+    <div id="customComparisonContainer" class="comparison-cards"></div>
+</section>
+
             <section class="card">
                 <div class="results-header">
-                    <h3>Recommended Drug Candidates</h3>
+                    <div>
+                        <h3>Recommended Drug Candidates</h3>
+                        <p class="muted under-title">Ranked candidates for {{ selected_disease }}</p>
+                    </div>
 
                     <form method="POST" action="/download">
                         <input type="hidden" name="selected_disease" value="{{ selected_disease }}">
@@ -145,10 +323,22 @@
 
                 <div class="drug-list">
                     {% for row in results %}
-                    <details class="drug-box">
+                    <details class="drug-box {% if loop.index <= 3 %}top-drug-box{% endif %}">
+                        {% if loop.index == 1 %}
+                            <div class="rank-ribbon gold">Top 1</div>
+                        {% elif loop.index == 2 %}
+                            <div class="rank-ribbon silver">Top 2</div>
+                        {% elif loop.index == 3 %}
+                            <div class="rank-ribbon bronze">Top 3</div>
+                        {% endif %}
+
                         <summary class="drug-summary">
                             <div class="drug-summary-top">
-                                <span class="drug-name">🧪 {{ row['drug_name'] }}</span>
+                                <div class="drug-title-group">
+                                    <span class="drug-rank">#{{ loop.index }}</span>
+                                    <span class="drug-name">🧪 {{ row['drug_name'] }}</span>
+                                </div>
+                                <span class="summary-hint">Details ▾</span>
                             </div>
 
                             <div class="badge-row">
@@ -173,11 +363,32 @@
                         </summary>
 
                         <div class="drug-details">
-                            <p><strong>Drug Class:</strong> {{ row['drug_class'] }}</p>
-                            <p><strong>Mechanism of Action:</strong> {{ row['mechanism_of_action'] }}</p>
-                            <p><strong>Species Suitability:</strong> {{ row['species_suitability'] }}</p>
-                            <p><strong>Repurposing Potential:</strong> {{ row['repurposing_potential'] }}</p>
-                            <p><strong>Explanation:</strong> {{ row['explanation'] }}</p>
+                            <div class="details-grid">
+                                <div class="detail-box">
+                                    <div class="detail-label">Drug Class</div>
+                                    <div class="detail-value">{{ row['drug_class'] }}</div>
+                                </div>
+
+                                <div class="detail-box">
+                                    <div class="detail-label">Species Suitability</div>
+                                    <div class="detail-value">{{ row['species_suitability'] }}</div>
+                                </div>
+
+                                <div class="detail-box wide">
+                                    <div class="detail-label">Mechanism of Action</div>
+                                    <div class="detail-value">{{ row['mechanism_of_action'] }}</div>
+                                </div>
+
+                                <div class="detail-box">
+                                    <div class="detail-label">Repurposing Potential</div>
+                                    <div class="detail-value">{{ row['repurposing_potential'] }}</div>
+                                </div>
+
+                                <div class="detail-box wide">
+                                    <div class="detail-label">Explanation</div>
+                                    <div class="detail-value">{{ row['explanation'] }}</div>
+                                </div>
+                            </div>
                         </div>
                     </details>
                     {% endfor %}
@@ -185,30 +396,201 @@
             </section>
             {% endif %}
 
-            <section class="card">
-                <h3>About ZIYA</h3>
-                <p>{{ about }}</p>
-            </section>
+            <section class="card compact-info-section" id="about">
+    <details class="info-accordion" open>
+        <summary>
+            <span>About ZIYA</span>
+            <span class="accordion-hint">Click to collapse / expand</span>
+        </summary>
 
-            <section class="card">
-                <h3>Limitations</h3>
-                <ul>
-                    {% for item in limitations %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
+        <div class="accordion-body">
+            <div class="section-title-row">
+                <span class="section-chip">Academic Project</span>
+            </div>
 
-            <section class="card">
-                <h3>Future Work</h3>
-                <ul>
-                    {% for item in future_work %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
+            <p>{{ about }}</p>
+
+            <div class="about-grid">
+                <div class="about-box developer-about-box">
+                    <div class="about-label">Developer</div>
+                    <img src="{{ url_for('static', filename='images/developer-logo.png') }}" 
+                         alt="إبراهيم بن رمضان Logo" 
+                         class="developer-logo">
+                </div>
+
+                <div class="about-box">
+                    <div class="about-label">University</div>
+                    <div class="about-value">Suez Canal University</div>
+                </div>
+
+                <div class="about-box">
+                    <div class="about-label">Faculty</div>
+                    <div class="about-value">Faculty of Veterinary Medicine</div>
+                </div>
+
+                <div class="about-box">
+                    <div class="about-label">Supervision</div>
+                    <div class="about-value">Department of Pharmacology</div>
+                </div>
+            </div>
+        </div>
+    </details>
+</section>
+
+<section class="card compact-info-section">
+    <details class="info-accordion">
+        <summary>
+            <span>Limitations</span>
+            <span class="accordion-hint">Click to expand</span>
+        </summary>
+
+        <div class="accordion-body">
+            <ul class="styled-list">
+                {% for item in limitations %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </details>
+</section>
+
+<section class="card compact-info-section" id="future">
+    <details class="info-accordion">
+        <summary>
+            <span>Future Work</span>
+            <span class="accordion-hint">Click to expand</span>
+        </summary>
+
+        <div class="accordion-body">
+            <ul class="styled-list">
+                {% for item in future_work %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </details>
+</section>
             {% endif %}
+
+            <footer class="footer">
+                <div><strong>ZIYA</strong> • Veterinary AI Drug Repurposing Platform</div>
+                <div>Developed by إبراهيم بن رمضان • Suez Canal University • Faculty of Veterinary Medicine</div>
+            </footer>
         </main>
     </div>
+
+    <script>
+    let lastScrollY = window.scrollY;
+    const topbar = document.getElementById("topbar");
+    const hoverZone = document.getElementById("topbarHoverZone");
+
+    function toggleSidebar() {
+        document.body.classList.toggle("sidebar-hidden");
+    }
+
+    function closeSidebarOnMobile() {
+        if (window.innerWidth <= 768) {
+            document.body.classList.add("sidebar-hidden");
+        } else {
+            document.body.classList.remove("sidebar-hidden");
+        }
+    }
+
+    window.addEventListener("load", closeSidebarOnMobile);
+    window.addEventListener("resize", closeSidebarOnMobile);
+
+    window.addEventListener("scroll", function () {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY && currentScrollY > 90) {
+            document.body.classList.add("topbar-auto-hidden");
+        } else {
+            document.body.classList.remove("topbar-auto-hidden");
+        }
+
+        lastScrollY = currentScrollY;
+    });
+
+    hoverZone.addEventListener("mouseenter", function () {
+        document.body.classList.remove("topbar-auto-hidden");
+    });
+
+    topbar.addEventListener("mouseenter", function () {
+        document.body.classList.remove("topbar-auto-hidden");
+    });
+    function getRankClass(rank) {
+    if (rank === 1) return "gold";
+    if (rank === 2) return "silver";
+    if (rank === 3) return "bronze";
+    return "blue";
+}
+
+function updateCustomComparison() {
+    const container = document.getElementById("customComparisonContainer");
+    if (!container) return;
+
+    const selected = document.querySelectorAll(".compare-drug-checkbox:checked");
+    container.innerHTML = "";
+
+    if (selected.length === 0) {
+        container.innerHTML = `
+            <div class="empty-comparison-message">
+                Select at least one drug candidate to compare.
+            </div>
+        `;
+        return;
+    }
+
+    selected.forEach(function (checkbox) {
+        const rank = Number(checkbox.dataset.rank);
+        const rankClass = getRankClass(rank);
+
+        const card = document.createElement("div");
+        card.className = "comparison-mini-card";
+
+        card.innerHTML = `
+            <div class="comparison-rank-row">
+                <span class="rank-pill ${rankClass}">#${rank}</span>
+                <strong>${checkbox.dataset.drug}</strong>
+            </div>
+
+            <div class="comparison-mini-grid">
+                <div>
+                    <span>Score</span>
+                    <strong>${checkbox.dataset.score}</strong>
+                </div>
+                <div>
+                    <span>Confidence</span>
+                    <strong>${checkbox.dataset.confidence}</strong>
+                </div>
+                <div>
+                    <span>Toxicity</span>
+                    <strong>${checkbox.dataset.toxicity}</strong>
+                </div>
+            </div>
+
+            <div class="comparison-info-line">
+                <strong>Class:</strong> ${checkbox.dataset.class}
+            </div>
+
+            <div class="comparison-info-line">
+                <strong>Species:</strong> ${checkbox.dataset.species}
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const checkboxes = document.querySelectorAll(".compare-drug-checkbox");
+
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener("change", updateCustomComparison);
+    });
+
+    updateCustomComparison();
+});
+</script>
 </body>
 </html>

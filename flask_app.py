@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, send_file, Response
 import io
-import pandas as pd
 
 from recommendation_engine import (
     load_data,
@@ -48,6 +47,7 @@ def index():
             confidence_options=CONFIDENCE_OPTIONS,
             disease_info=None,
             results=[],
+            analyzed=False,
             about=PROJECT_ABOUT,
             limitations=LIMITATIONS,
             future_work=FUTURE_WORK,
@@ -64,10 +64,14 @@ def index():
     min_score = DEFAULT_MIN_SCORE
     selected_toxicities = TOXICITY_OPTIONS.copy()
     selected_confidence = CONFIDENCE_OPTIONS.copy()
+
     results = []
-    disease_info = get_disease_details(selected_disease, diseases_df) if selected_disease else None
+    disease_info = None
+    analyzed = False
 
     if request.method == "POST":
+        analyzed = True
+
         selected_disease = request.form.get("selected_disease", default_disease)
 
         try:
@@ -82,11 +86,6 @@ def index():
 
         selected_toxicities = request.form.getlist("allowed_toxicities")
         selected_confidence = request.form.getlist("allowed_confidence_levels")
-
-        if not selected_toxicities:
-            selected_toxicities = []
-        if not selected_confidence:
-            selected_confidence = []
 
         disease_info = get_disease_details(selected_disease, diseases_df)
 
@@ -119,6 +118,7 @@ def index():
         confidence_options=CONFIDENCE_OPTIONS,
         disease_info=disease_info,
         results=results,
+        analyzed=analyzed,
         about=PROJECT_ABOUT,
         limitations=LIMITATIONS,
         future_work=FUTURE_WORK,
@@ -134,6 +134,7 @@ def download():
         return Response("Data error", status=400)
 
     selected_disease = request.form.get("selected_disease", "")
+
     try:
         top_n = int(request.form.get("top_n", DEFAULT_TOP_N))
     except ValueError:
@@ -179,6 +180,7 @@ def download():
     output.seek(0)
 
     safe_name = selected_disease.replace(" ", "_").replace("/", "_")
+
     return send_file(
         output,
         mimetype="text/csv",

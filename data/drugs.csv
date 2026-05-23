@@ -24,3 +24,34 @@ DR022,Lopinavir,Antiviral,Inhibits viral protease activity,Antiretroviral therap
 DR023,Ritonavir,Antiviral / Booster,Protease inhibitor; used mainly to boost plasma levels of companion antivirals,Antiretroviral therapy / pharmacokinetic boosting,Medium,Multi-species,Medium,Medium
 DR024,Monensin,Repurposed / Experimental,Disrupts ion transport across membranes; explored for antiviral and cellular pathway effects,Anticoccidial use,High,Poultry / Ruminants,Medium,Low
 DR025,Curcumin,Anti-inflammatory / Immunomodulatory,Modulates inflammatory and oxidative stress pathways,Nutraceutical / anti-inflammatory support,Low,Multi-species,Medium,Low
+DR026,Sofosbuvir,Antiviral,RNA polymerase inhibition,Antiviral therapy,Medium,Multi-species,Medium,Medium
+DR027,Galidesivir,Antiviral,Nucleoside analog targeting viral RNA polymerase,Broad-spectrum antiviral research,Medium,Multi-species,High,Medium
+DR028,BCX4430,Antiviral,Adenosine analog inhibiting viral RNA polymerase,Broad-spectrum antiviral research,Medium,Multi-species,High,Medium
+DR029,Umifenovir,Antiviral,Viral entry and membrane fusion inhibition,Antiviral therapy,Low,Multi-species,Medium,Medium
+DR030,Camostat,Protease inhibitor,Host serine protease inhibition,Antiviral host-targeted therapy,Medium,Multi-species,Medium,Medium
+DR031,Nafamostat,Protease inhibitor,Host protease and viral entry inhibition,Antiviral host-targeted therapy,Medium,Multi-species,Medium,Medium
+DR032,Maraviroc,Entry inhibitor,CCR5 receptor modulation and viral entry inhibition,Host-targeted antiviral research,Medium,Multi-species,Medium,Low
+DR033,Interferon-gamma,Immunomodulator,Activation of cellular antiviral immune responses,Immunomodulatory therapy,Medium,Multi-species,Medium,Medium
+DR034,Streptomycin,Antibiotic,Inhibition of bacterial protein synthesis,Aminoglycoside antibiotic,High,Cattle / Sheep / Goats / Swine,Medium,High
+DR035,Gentamicin,Antibiotic,Inhibition of bacterial protein synthesis,Aminoglycoside antibiotic,High,Multi-species,Medium,High
+DR036,Rifampicin,Antibiotic,Inhibition of bacterial RNA polymerase,Antibacterial therapy,Medium,Multi-species,High,High
+DR037,Isoniazid,Antimycobacterial,Inhibition of mycolic acid synthesis,Antimycobacterial therapy,Medium,Cattle / Humans / Multi-species,Medium,High
+DR038,Ethambutol,Antimycobacterial,Inhibition of arabinogalactan cell wall synthesis,Antimycobacterial therapy,Medium,Multi-species,Medium,Medium
+DR039,Ciprofloxacin,Antibiotic,Inhibition of bacterial DNA gyrase and topoisomerase,Fluoroquinolone antibiotic,Medium,Multi-species,High,High
+DR040,Penicillin G,Antibiotic,Inhibition of bacterial cell wall synthesis,Beta-lactam antibiotic,Low,Cattle / Sheep / Goats / Horses / Multi-species,Medium,High
+DR041,Oxytetracycline,Antibiotic,Inhibition of bacterial protein synthesis,Tetracycline antibiotic,Medium,Cattle / Sheep / Goats / Birds / Multi-species,High,High
+DR042,Chloramphenicol,Antibiotic,Inhibition of bacterial protein synthesis,Broad-spectrum antibiotic,High,Multi-species,Medium,Medium
+DR043,Ceftazidime,Antibiotic,Inhibition of bacterial cell wall synthesis,Cephalosporin antibiotic,Medium,Multi-species,Medium,High
+DR044,Praziquantel,Anthelmintic,Disruption of parasite calcium homeostasis and tegument integrity,Trematode and cestode therapy,Low,Multi-species,High,High
+DR045,Albendazole,Anthelmintic,Inhibition of parasite microtubule polymerization,Broad-spectrum helminth therapy,Medium,Multi-species,High,High
+DR046,Niclosamide,Anthelmintic,Inhibition of tapeworm oxidative phosphorylation,Cestode therapy,Low,Multi-species,Medium,High
+DR047,Triclabendazole,Anthelmintic,Inhibition of fluke microtubule function,Fasciola therapy,Medium,Ruminants / Humans / Multi-species,High,High
+DR048,Metronidazole,Antiprotozoal,Disruption of anaerobic protozoal DNA synthesis,Protozoal gastrointestinal infection therapy,Medium,Multi-species,High,High
+DR049,Tinidazole,Antiprotozoal,Disruption of anaerobic protozoal DNA synthesis,Protozoal infection therapy,Medium,Multi-species,Medium,High
+DR050,Amphotericin B,Antiprotozoal,Binding to parasite membrane sterols and membrane disruption,Leishmaniasis therapy,High,Dogs / Humans / Multi-species,Medium,High
+DR051,Miltefosine,Antiprotozoal,Disruption of parasite membrane lipid metabolism,Leishmaniasis therapy,Medium,Dogs / Humans / Multi-species,High,High
+DR052,Benznidazole,Antiprotozoal,Generation of reactive metabolites damaging Trypanosoma cruzi,Chagas disease therapy,Medium,Humans / Multi-species,High,High
+DR053,Nifurtimox,Antiprotozoal,Nitro-reduction producing toxic radicals in Trypanosoma cruzi,Chagas disease therapy,Medium,Humans / Multi-species,High,High
+DR054,Spiramycin,Antiprotozoal,Inhibition of protozoal protein synthesis,Toxoplasmosis therapy,Low,Cats / Humans / Livestock / Multi-species,Medium,Medium
+DR055,Clindamycin,Antiprotozoal,Inhibition of apicoplast protein synthesis,Toxoplasmosis supportive therapy,Medium,Multi-species,Medium,Medium
+DR056,Paromomycin,Antiprotozoal,Inhibition of protozoal protein synthesis,Intestinal protozoal infection therapy,Medium,Multi-species,Medium,Medium

@@ -1,6 +1,36 @@
 disease_id,disease_name,species,pathogen_type,target_system,zoonotic_risk,key_symptoms,molecular_target
 D001,Avian Influenza (H5N1),Poultry,Virus,Respiratory/Systemic,High,"respiratory distress, coughing, nasal discharge, sudden death",viral RNA polymerase / hemagglutinin
-D002,African Swine Fever (ASF),Swine,Virus,Hemorrhagic/Systemic,Low,"high fever, hemorrhage, cyanosis, sudden death",viral DNA polymerase / viral replication proteins
-D003,Lumpy Skin Disease (LSD),Cattle,Virus,Skin/Systemic,Low,"skin nodules, fever, lymphadenopathy, reduced milk production",viral DNA polymerase / envelope-associated proteins
-D004,Foot and Mouth Disease (FMD),Cattle,Virus,Oral/Dermal/Systemic,Medium,"fever, salivation, oral vesicles, lameness",viral protease / RNA-dependent RNA polymerase
-D005,SARS-CoV-2,Companion animals / multi-species,Virus,Respiratory/Systemic,High,"respiratory signs, fever, nasal discharge, lethargy",spike protein / main protease / RNA-dependent RNA polymerase
+D002,SARS-CoV-2,Companion animals / multi-species,Virus,Respiratory/Systemic,High,"respiratory signs, fever, nasal discharge, lethargy",spike protein / main protease / RNA-dependent RNA polymerase
+D003,Rift Valley Fever,Sheep / Cattle / Goats,Virus,Hemorrhagic/Systemic,High,fever abortion weakness hemorrhage,viral RNA polymerase / glycoproteins
+D004,Rabies,Dogs / Cats / Cattle / Multi-species,Virus,Neurological/Systemic,High,hypersalivation aggression paralysis behavioral changes,viral glycoprotein / RNA polymerase
+D005,Newcastle Disease,Poultry,Virus,Respiratory/Neurological/Systemic,Medium,respiratory distress nervous signs greenish diarrhea drop in egg production,viral fusion protein / hemagglutinin-neuraminidase
+D006,West Nile Fever,Horses / Birds / Humans,Virus,Neurological/Systemic,High,fever weakness ataxia tremors encephalitis,viral envelope protein / RNA-dependent RNA polymerase
+D007,Brucellosis,Cattle / Sheep / Goats / Swine,Bacteria,Reproductive/Systemic,High,abortion infertility retained placenta fever,Brucella intracellular survival / protein synthesis
+D008,Middle East Respiratory Syndrome (MERS-CoV),Dromedary camels / Humans,Virus,Respiratory/Systemic,High,fever cough pneumonia respiratory distress,spike protein / main protease / RNA-dependent RNA polymerase
+D009,Nipah Virus,Pigs / Bats / Humans,Virus,Neurological/Respiratory/Systemic,High,fever encephalitis respiratory distress neurological signs,viral attachment glycoprotein / fusion protein / RNA polymerase
+D010,Bovine Tuberculosis,Cattle / Humans,Bacteria,Respiratory/Gastrointestinal/Systemic,High,chronic cough weight loss lymph node enlargement weakness,Mycobacterium cell wall synthesis / intracellular survival
+D011,Anthrax,Cattle / Sheep / Goats / Humans,Bacteria,Cutaneous/Respiratory/Systemic,High,sudden death fever edema hemorrhage skin lesions,Bacillus anthracis toxin production / bacterial protein synthesis
+D012,Leptospirosis,Dogs / Cattle / Rodents / Humans,Bacteria,Renal/Hepatic/Systemic,High,fever jaundice hemoglobinuria kidney damage abortion,Leptospira motility / bacterial protein synthesis
+D013,Q Fever,Cattle / Sheep / Goats / Humans,Bacteria,Respiratory/Reproductive/Systemic,High,fever pneumonia abortion reproductive loss,Coxiella intracellular replication / bacterial protein synthesis
+D014,Glanders,Horses / Mules / Donkeys / Humans,Bacteria,Respiratory/Cutaneous/Systemic,High,nasal discharge nodules ulcers fever respiratory signs,Burkholderia mallei intracellular survival / bacterial replication
+D015,Psittacosis (Parrot Fever),Birds / Humans,Bacteria,Respiratory/Systemic,High,respiratory distress fever lethargy pneumonia,Chlamydophila intracellular replication / bacterial protein synthesis
+D016,Tularemia,Rabbits / Rodents / Humans,Bacteria,Lymphatic/Systemic,High,fever lymphadenopathy ulcers weakness,Francisella intracellular survival / bacterial protein synthesis
+D017,Plague,Rodents / Fleas / Humans,Bacteria,Lymphatic/Respiratory/Systemic,High,fever lymph node swelling septicemia pneumonia,Yersinia pestis virulence factors / bacterial protein synthesis
+D018,African Swine Fever (ASF),Swine,Virus,Hemorrhagic/Systemic,Low,"high fever, hemorrhage, cyanosis, sudden death",viral DNA polymerase / viral replication proteins
+D019,Lumpy Skin Disease (LSD),Cattle,Virus,Skin/Systemic,Low,"skin nodules, fever, lymphadenopathy, reduced milk production",viral DNA polymerase / envelope-associated proteins
+D020,Foot and Mouth Disease (FMD),Cattle,Virus,Oral/Dermal/Systemic,Medium,"fever, salivation, oral vesicles, lameness",viral protease / RNA-dependent RNA polymerase
+D021,Cysticercosis and Taeniasis,Humans / Swine,Parasite,CNS/Gastrointestinal/Systemic,High,seizures abdominal discomfort cysticerci in tissues neurocysticercosis,Taenia solium cysticerci / microtubule function
+D022,Diphyllobothriasis,Humans / Fish,Parasite,Gastrointestinal/Hematologic,Medium,abdominal discomfort diarrhea vitamin B12 deficiency anemia,broad fish tapeworm energy metabolism
+D023,Fascioliasis,Ruminants / Humans,Parasite,Hepatobiliary/Systemic,High,fever abdominal pain liver migration bile duct inflammation,Fasciola tegument / energy metabolism
+D024,Cercarial Dermatitis,Humans / Birds / Cattle,Parasite,Cutaneous,Medium,itching rash papules swimmer itch,schistosome cercariae skin penetration
+D025,Clonorchiasis,Humans / Fish,Parasite,Hepatobiliary,Medium,abdominal discomfort cholangitis bile duct inflammation,liver fluke tegument / energy metabolism
+D026,Trichinellosis,Humans / Swine / Wild game,Parasite,Muscular/Gastrointestinal/Systemic,High,fever myalgia diarrhea facial edema muscle pain,Trichinella larvae muscle encystment
+D027,Visceral Larva Migrans,Dogs / Cats / Humans,Parasite,Visceral/Ocular/Systemic,High,fever hepatomegaly eosinophilia ocular lesions,Toxocara larvae migration
+D028,Cutaneous Larva Migrans,Dogs / Cats / Humans,Parasite,Cutaneous,Medium,itching creeping eruption serpiginous skin tracks,hookworm larvae skin migration
+D029,Anisakiasis,Humans / Marine fish / Squid,Parasite,Gastrointestinal,Medium,acute abdominal pain nausea vomiting gastric irritation,Anisakis larvae gastric mucosal invasion
+D030,Cryptosporidiosis,Calves / Humans,Protozoa,Gastrointestinal,High,watery diarrhea dehydration abdominal cramps,Cryptosporidium oocyst survival / intestinal epithelial infection
+D031,Leishmaniasis,Dogs / Humans,Protozoa,Cutaneous/Visceral/Systemic,High,skin lesions fever weight loss splenomegaly,Leishmania intracellular amastigotes
+D032,Giardiasis,Humans / Dogs / Livestock,Protozoa,Gastrointestinal,Medium,diarrhea malabsorption abdominal cramps greasy stool,Giardia trophozoite attachment / anaerobic metabolism
+D033,Balantidiasis,Pigs / Humans,Protozoa,Gastrointestinal,Medium,diarrhea dysentery abdominal pain colitis,Balantidium coli cysts / trophozoite invasion
+D034,Chagas Disease,Humans / Domestic mammals / Wildlife,Protozoa,Cardiac/Gastrointestinal/Systemic,High,fever cardiomyopathy megacolon chronic infection,Trypanosoma cruzi intracellular replication
+D035,Toxoplasmosis,Cats / Humans / Livestock,Protozoa,Neurological/Reproductive/Systemic,High,abortion encephalitis ocular lesions fever,Toxoplasma tachyzoites / folate metabolism
